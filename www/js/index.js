@@ -107,10 +107,35 @@ $(document).ready(function() {
         $.mobile.navigate( "#les5Page", { transition: 'slideup'} );
     }// End function changeRegisterPage()
 
+    // Navigate to les 5 Page Oef 1 Page
+    function changeLes5Oef1Page() {
+        $.mobile.navigate( "#les5Oef1", { transition: 'slideup'} );
+    }// End function changeLes5Oef1Page()
+
+    // Navigate to les 5 Page Oef 2 Page
+    function changeLes5Oef2Page() {
+        $.mobile.navigate( "#les5Oef2", { transition: 'slideup'} );
+    }// End function changeLes5Oef2Page()
+
     // Navigate to les 6 Page
     function changeLes6Page() {
         $.mobile.navigate( "#les6Page", { transition: 'slideup'} );
     }// End function changeRegisterPage()
+
+    // Navigate to les 6 Page Oef 5.1 Page
+    function changeLes6Oef51Page() {
+        $.mobile.navigate( "#les6Oef51", { transition: 'slideup'} );
+    }// End function changeLes6Oef51Page()
+
+    // Navigate to les 6 Page Oef 5.2 Page
+    function changeLes6Oef52Page() {
+        $.mobile.navigate( "#les6Oef52", { transition: 'slideup'} );
+    }// End function changeLes6Oef52Page()
+
+    // Navigate to les 6 Page Oef 5.1 Page
+    function changeLes6Oef53Page() {
+        $.mobile.navigate( "#les6Oef53", { transition: 'slideup'} );
+    }// End function changeLes6Oef53Page()
 
     // Navigate to les 7 Page
     function changeLes7Page() {
@@ -153,6 +178,9 @@ $(document).ready(function() {
 	$( "#btnHome12" ).on( "click", changeHomePage );
 	$( "#btnHome13" ).on( "click", changeHomePage );
 	$( "#btnHome14" ).on( "click", changeHomePage );
+	$( "#btnHome15" ).on( "click", changeHomePage );
+	$( "#btnHome16" ).on( "click", changeHomePage );
+	$( "#btnHome17" ).on( "click", changeHomePage );
 	$( "#btnLes1" ).on( "click", changeLes1Page );
 	$( "#btnLes2" ).on( "click", changeLes2Page );
 	$( "#btnLes3" ).on( "click", changeLes3Page );
@@ -166,7 +194,17 @@ $(document).ready(function() {
 	$( "#btnOef33" ).on( "click", changeLes3Oef33Page );
 	$( "#btnLes4" ).on( "click", changeLes4Page );
 	$( "#btnLes5" ).on( "click", changeLes5Page );
+	$( "#btnLes51" ).on( "click", changeLes5Page );
+	$( "#btnLes52" ).on( "click", changeLes5Page );
+	$( "#btnLes5Oef1" ).on( "click", changeLes5Oef1Page );
+	$( "#btnLes5Oef2" ).on( "click", changeLes5Oef2Page );
 	$( "#btnLes6" ).on( "click", changeLes6Page );
+	$( "#btnLes61" ).on( "click", changeLes6Page );
+	$( "#btnLes62" ).on( "click", changeLes6Page );
+	$( "#btnLes63" ).on( "click", changeLes6Page );
+	$( "#btnLes6Oef51" ).on( "click", changeLes6Oef51Page );
+	$( "#btnLes6Oef52" ).on( "click", changeLes6Oef52Page );
+	$( "#btnLes6Oef53" ).on( "click", changeLes6Oef53Page );
 	$( "#btnLes7" ).on( "click", changeLes7Page );
 	$( "#btnLes8" ).on( "click", changeLes8Page );
 	$( "#btnLes9" ).on( "click", changeLes9Page );

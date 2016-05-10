@@ -71,7 +71,9 @@ $(document).ready(function() {
      */
 
     // Ready to rule? Let's start the game!
-    startGame();
+    createbtnStart();
+    $( "#btnStartGame" ).on( "click",  startGame );
+    //    startGame();
 
     /*
     **LOAD DEFAULT MAP AND CHARACTER**
@@ -88,6 +90,10 @@ $(document).ready(function() {
         $(document).keydown(keyboardKeys);
         //showLog();
         showInfo();
+        //console.log(mapPosition);
+        console.log(weaponPosition);
+
+        $("#btnStartGame").hide();
     }
 
     /*
@@ -123,6 +129,22 @@ $(document).ready(function() {
     }
 
     /*
+    **BUTTONS**
+    */
+
+    // Start button
+    function createbtnStart() {
+        var btnStartGame = '<button id=btnStartGame type=button class=ui-btn ui-corner-all ui-shadow ui-btn-b> Start </button>';
+        $("#Map").append(btnStartGame);
+
+        //playerX = $("#Player").width();
+        //playerY = $("#Player").height();
+        //playerPosition = $("#Player").position()
+
+       // console.log("Player has been created succesfully.");
+    }
+
+    /*
     **CREATION OF CHARACTERS**
     */
 
@@ -133,6 +155,8 @@ $(document).ready(function() {
 
         playerX = $("#Player").width();
         playerY = $("#Player").height();
+        playerPosition = $("#Player").position()
+
         console.log("Player has been created succesfully.");
     }
 
@@ -172,9 +196,10 @@ $(document).ready(function() {
 
         weaponX = $("#Weapon").width();
         weaponY = $("#Weapon").height();
+        weaponPosition = $("#Weapon").position()
 
         $("#Weapon").css({
-            'left' : 1100 + 'px',
+            'left' :  1000 + 'px',
             'top' : 10 + 'px'
         });
         console.log("Weapon has been spawned succesfully.");

@@ -1,4 +1,4 @@
-//Les 4: 03 maart 2015 - Dinsdag
+//Les 4: 03 maart 2016 - Maandag
 
 // Oefening:  Manipuleren HTML en CSS
 
