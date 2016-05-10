@@ -1,0 +1,33 @@
+#Map {
+	border: 6px solid black;
+	width: 1200px;
+	height: 700px;
+	position: absolute;
+	background: url('../img/background.png') no-repeat;
+	background-size: cover;
+}
+#Player {
+    width: 90px;
+    height: 110px;
+    position: absolute;
+    background: url('../img/TrollslayerRight.png') no-repeat;
+}
+#Weapon {
+    width: 70px;
+    height: 60px;
+    position: absolute;
+    background: url('../img/Weapon.png') no-repeat;
+}
+.Troll{
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    background: url('../img/Troll.png') no-repeat;
+}
+#Info {
+    /*border: 4px solid gray; */
+    width: 150px;
+    height: 400px;
+    position: absolute;
+    left: 1240px;
+}

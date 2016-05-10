@@ -1,4 +1,4 @@
-//Les 1: 1 Februari 2016 - Maandag
+//Les 1: 8 Februari 2016 - Maandag
 
 // Dit lijntje zorgt er voor dat je browser en ook brackets makkelijker fouten zal zien en zal tegenhouden.
 "use strict";

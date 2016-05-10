@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="Game/css/Trollslayer.css" />
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+    <div class="app2">
+        <!-- Home Page -->
+        <div id ="homePage" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+                <h1>Portfolio MI2 2015 - 2016 Katjon Ng</h1>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnLes1" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 1
+                </button>
+                <button id="btnLes2" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 2
+                </button>
+                <button id="btnLes3" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 3
+                </button>
+                <button id="btnLes4" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 4
+                </button>
+                <button id="btnLes5" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 5
+                </button>
+                <button id="btnLes6" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 6
+                </button>
+                <button id="btnLes7" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 7
+                </button>
+                <button id="btnLes8" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 8
+                </button>
+                <button id="btnLes9" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 9
+                </button>
+                <button id="btnLes10" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 10
+                </button>
+                <button id="btnGame" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Game
+                </button>
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div> <!-- /homepage -->
+
+        <!-- Les 1 Page -->
+        <div id ="les1Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+                <h1>Portfolio MI2 2015 - 2016 Katjon Ng</h1>
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+                <!-- Javascript: Tijdens de les -->
+                <script type="text/javascript">
+                var uitkomst1 = 4 * 5 + 10;
+                var uitkomst2 = 4 * (5 + 10);
+
+                document.write('uitkomst 1:' + uitkomst1 + '<br>uitkomst 2 :' + uitkomst2);
+                </script>
+
+                <!-- Javascript: zelfgemaakt -->
+                <script type="text/javascript" src="js/les1-KatjonNg-rekenmachine.js"></script>
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div> <!-- /les1page
+
+        <!-- Les 2 Page -->
+        <div id ="les2Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+                <h1>Opdracht les 2: Schaakbord, dambord en priemgetal</h1>
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome1" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+                <!-- Javascript: zelgemaakt -->
+                <script type="text/javascript" src="js/les2-KatjonNg-schaakbord-dambord-priemgetal.js"></script>
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div> <!-- /les2page -->
+
+        <!-- Les 3 Page -->
+        <div id ="les3Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome2" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+                <button id="btnOef23" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Oefening 2.3 p44-45
+                </button>
+                <button id="btnOef24" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Oefening 2.4 p47
+                </button>
+                <button id="btnOef322" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Oefening 3.2.2 p66
+                </button>
+                <button id="btnOef33" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Oefening 3.3 p68-70
+                </button>
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div> <!-- /les3Page -->
+
+        <!-- Les 3 Oef 2.3 Page -->
+        <div id ="les3Oef23Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+                <h1>Opdracht les 3: Oefening 2.3 p44-45: Jquery animatie</h1>
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome11" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+                <button id="btnLes31" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 3
+                </button>
+
+                <div id="inhoud"> </div>
+
+                <script type="text/javascript">
+                $(document).ready(function() {
+                    $("#inhoud").addClass("titel");
+                    $("#inhoud").html("Starten met Jquery!");
+                    $("#inhoud").animate({
+                        fontSize : "90px"
+                    }, 2500);
+                });
+                </script>
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+         </div> <!-- /les3Oef23Page -->
+
+        <!-- Les 3 Oef 2.4 Page -->
+        <div id ="les3Oef24Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome12" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+                <button id="btnLes32" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 3
+                </button>
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div> <!-- /les3Oef24Page -->
+
+    <!-- les3 Oef 3.2.2 Page -->
+    <div id ="les3Oef322Page" data-role="page">
+        <!-- Header -->
+        <div data-role="header">
+
+            <h2>Katjon Ng - r0371936</h2>
+        </div> <!-- /header-->
+
+        <!-- Content -->
+        <div data-role="main" class="ui-content">
+            <button id="btnHome13" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                Home
+            </button>
+            <button id="btnLes33" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                Les 3
+            </button>
+
+
+        </div> <!-- /content -->
+
+        <!-- Footer -->
+        <div data-role="footer">
+            <p>
+                Copyright &copy; Katjon Ng 2015 - 2016</a>
+            </p>
+        </div> <!-- /footer -->
+    </div> <!-- /les3Oef322Page -->
+
+        <!-- Les 3 Oef 3.3 Page -->
+        <div id ="les3Oef33Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome14" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+                <button id="btnLes34" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 3
+                </button>
+
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div> <!-- les3Oef33Page
+
+        <!-- Les 4 Page -->
+        <div id ="les4Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome3" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div>
+
+        <!-- Les 5 Page -->
+        <div id ="les5Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome4" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div>
+
+        <!-- Les 3 Page -->
+        <div id ="les6Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome5" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div>
+
+        <!-- Les 3 Page -->
+        <div id ="les7Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome6" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div>
+
+        <!-- Les 3 Page -->
+        <div id ="les8Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome7" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div>
+
+        <!-- Les 9 Page -->
+        <div id ="les9Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome8" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div>
+
+        <!-- Les 3 Page -->
+        <div id ="les10Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome9" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div>
+
+        <!-- Les Game Page -->
+        <div id ="GamePage" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome10" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+                <div id="Map"> </div>
+
+                <div id="Info"> </div>
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <!--
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+
+        </div> <!-- /GamePage -->
+
+
+    </div> <!-- End app -->
+
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="Game/js/Trollslayer.js"> </script>
+    <!--
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    -->
+</body>
+
+</html>
