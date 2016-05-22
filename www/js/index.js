@@ -64,102 +64,102 @@ $(document).ready(function() {
 
 	// Navigate to les 1 Page
 	function changeLes1Page() {
-		$.mobile.navigate( "#les1Page", { transition: 'slideup'} );
+		$.mobile.navigate( "#les1Page", { transition: 'slide'} );
 	}// End function changeRegisterPage()
 
     // Navigate to les 2 Page
     function changeLes2Page() {
-        $.mobile.navigate( "#les2Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les2Page", { transition: 'slide'} );
     }// End function changeLes2Page()
 
     // Navigate to les 3
     function changeLes3Page() {
-        $.mobile.navigate( "#les3Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les3Page", { transition: 'slide'} );
     }// End function changeLes3Page()
 
     // Navigate to les 3 Page Oef 2.3 Page
     function changeLes3Oef23Page() {
-        $.mobile.navigate( "#les3Oef23Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les3Oef23Page", { transition: 'slide'} );
     }// End function changeLes3Oef23Page()
 
     // Navigate to les 3 Page Oef 2.4 Page
     function changeLes3Oef24Page() {
-        $.mobile.navigate( "#les3Oef24Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les3Oef24Page", { transition: 'slide'} );
     }// End function changeLes3Oef23Page()
 
     // Navigate to les 3 Page Oef 3.2.2 Page
     function changeLes3Oef322Page() {
-        $.mobile.navigate( "#les3Oef322Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les3Oef322Page", { transition: 'slide'} );
     }// End function changeLes3Oef24Page()
 
     // Navigate to les 3 Page Oef 3.3 Page
     function changeLes3Oef33Page() {
-        $.mobile.navigate( "#les3Oef33Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les3Oef33Page", { transition: 'slide'} );
     }// End function changeLes3Oef24Page()
 
     // Navigate to les 4 Page
     function changeLes4Page() {
-        $.mobile.navigate( "#les4Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les4Page", { transition: 'slide'} );
     }// End function changeRegisterPage()
 
     // Navigate to les 5 Page
     function changeLes5Page() {
-        $.mobile.navigate( "#les5Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les5Page", { transition: 'slide'} );
     }// End function changeRegisterPage()
 
     // Navigate to les 5 Page Oef 1 Page
     function changeLes5Oef1Page() {
-        $.mobile.navigate( "#les5Oef1", { transition: 'slideup'} );
+        $.mobile.navigate( "#les5Oef1", { transition: 'slide'} );
     }// End function changeLes5Oef1Page()
 
     // Navigate to les 5 Page Oef 2 Page
     function changeLes5Oef2Page() {
-        $.mobile.navigate( "#les5Oef2", { transition: 'slideup'} );
+        $.mobile.navigate( "#les5Oef2", { transition: 'slide'} );
     }// End function changeLes5Oef2Page()
 
     // Navigate to les 6 Page
     function changeLes6Page() {
-        $.mobile.navigate( "#les6Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les6Page", { transition: 'slide'} );
     }// End function changeRegisterPage()
 
     // Navigate to les 6 Page Oef 5.1 Page
     function changeLes6Oef51Page() {
-        $.mobile.navigate( "#les6Oef51", { transition: 'slideup'} );
+        $.mobile.navigate( "#les6Oef51", { transition: 'slide'} );
     }// End function changeLes6Oef51Page()
 
     // Navigate to les 6 Page Oef 5.2 Page
     function changeLes6Oef52Page() {
-        $.mobile.navigate( "#les6Oef52", { transition: 'slideup'} );
+        $.mobile.navigate( "#les6Oef52", { transition: 'slide'} );
     }// End function changeLes6Oef52Page()
 
     // Navigate to les 6 Page Oef 5.1 Page
     function changeLes6Oef53Page() {
-        $.mobile.navigate( "#les6Oef53", { transition: 'slideup'} );
+        $.mobile.navigate( "#les6Oef53", { transition: 'slide'} );
     }// End function changeLes6Oef53Page()
 
     // Navigate to les 7 Page
     function changeLes7Page() {
-        $.mobile.navigate( "#les7Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les7Page", { transition: 'slide'} );
     }// End function changeRegisterPage()
 
     // Navigate to les 8 Page
     function changeLes8Page() {
-        $.mobile.navigate( "#les8Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les8Page", { transition: 'slide'} );
     }// End function changeRegisterPage()
 
     // Navigate to les 9 Page
     function changeLes9Page() {
-        $.mobile.navigate( "#les9Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les9Page", { transition: 'slide'} );
     }// End function changeRegisterPage()
 
     // Navigate to les 10 Page
     function changeLes10Page() {
-        $.mobile.navigate( "#les10Page", { transition: 'slideup'} );
+        $.mobile.navigate( "#les10Page", { transition: 'slide'} );
     }// End function changeLes1Page()
 
     // Navigate to Game Page
     function changeGamePage() {
-        $.mobile.navigate( "#GamePage", { transition: 'slideup'} );
+        $.mobile.navigate( "#GamePage", { transition: 'slide'} );
     }// End function changeLes1Page()
 
     // Navigation when clicked
