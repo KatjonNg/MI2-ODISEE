@@ -140,12 +140,27 @@ $(document).ready(function() {
     // Navigate to les 7 Page
     function changeLes7Page() {
         $.mobile.navigate( "#les7Page", { transition: 'slide'} );
-    }// End function changeRegisterPage()
+    }// End function changeLes7Page()
+
+    // Navigate to les 7 Page Oef 6.1
+    function changeLes7Oef61Page() {
+        $.mobile.navigate( "#les7Oef61", { transition: 'slide'} );
+    }// End function changeLes7Oef61Page()
+
+    // Navigate to les 7 Page 7.2
+    function changeLes7Oef72Page() {
+        $.mobile.navigate( "#les7Oef72", { transition: 'slide'} );
+    }// End function changeLes7Oef72Page()
 
     // Navigate to les 8 Page
     function changeLes8Page() {
         $.mobile.navigate( "#les8Page", { transition: 'slide'} );
-    }// End function changeRegisterPage()
+    }// End function changeLes8Page()
+
+    // Navigate to les 8 Oef Page
+    function changeLes8OefPage() {
+        $.mobile.navigate( "#les8home", { transition: 'slide'} );
+    }// End function changeLes8OefPage()
 
     // Navigate to les 9 Page
     function changeLes9Page() {
@@ -181,6 +196,11 @@ $(document).ready(function() {
 	$( "#btnHome15" ).on( "click", changeHomePage );
 	$( "#btnHome16" ).on( "click", changeHomePage );
 	$( "#btnHome17" ).on( "click", changeHomePage );
+	$( "#btnHome18" ).on( "click", changeHomePage );
+	$( "#btnHome19" ).on( "click", changeHomePage );
+	$( "#btnHome20" ).on( "click", changeHomePage );
+	$( "#btnHome21" ).on( "click", changeHomePage );
+	$( "#btnHome22" ).on( "click", changeHomePage );
 	$( "#btnLes1" ).on( "click", changeLes1Page );
 	$( "#btnLes2" ).on( "click", changeLes2Page );
 	$( "#btnLes3" ).on( "click", changeLes3Page );
@@ -206,7 +226,12 @@ $(document).ready(function() {
 	$( "#btnLes6Oef52" ).on( "click", changeLes6Oef52Page );
 	$( "#btnLes6Oef53" ).on( "click", changeLes6Oef53Page );
 	$( "#btnLes7" ).on( "click", changeLes7Page );
+	$( "#btnLes71" ).on( "click", changeLes7Page );
+	$( "#btnLes72" ).on( "click", changeLes7Page );
+	$( "#btnLes7Oef61" ).on( "click", changeLes7Oef61Page );
+	$( "#btnLes7Oef72" ).on( "click", changeLes7Oef72Page );
 	$( "#btnLes8" ).on( "click", changeLes8Page );
+	$( "#btnLes8Oef" ).on( "click", changeLes8OefPage );
 	$( "#btnLes9" ).on( "click", changeLes9Page );
 	$( "#btnLes10" ).on( "click", changeLes10Page );
 	$( "#btnGame" ).on( "click", changeGamePage );

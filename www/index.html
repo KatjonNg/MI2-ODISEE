@@ -27,7 +27,6 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <!-- code hieronder geeft error en is opgelost: http://stackoverflow.com/questions/31211359/refused-to-load-the-script-because-it-violates-the-following-content-security-po -->
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" >
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval'; "> -->
     <!-- Good default declaration:
@@ -775,6 +774,36 @@
                     Les 6
                 </button>
 
+                <div id="fadein">
+                    <button id="hide">
+                        Verberg afbeelding
+                    </button>
+                    <!-- Eerste afbeelding die getoont word -->
+                    <div id="afbeelding" style="text-align:center">
+                        <img src=http://img.mobypicture.com/4784e2f8d760413b945c4e135be20278_large.jpg >
+                    </div>
+                    <!-- Deze afbeelding is verborgen en word pas getoond wanneer je op de knop drukt -->
+                    <div id="afbeelding2" style="text-align:center">
+                        <img src=http://img.mobypicture.com/ac9221b42e4852370dde2768686b999e_large.jpg style="display:none">
+                    </div>
+                </div>
+
+                <style type="text/css">
+                    div#fadein {
+                        display: none;
+                    }
+                </style>
+
+                <script type="text/javascript" >
+                    $(document).ready(function() {
+                        $('#fadein').fadeIn("slow");
+                        $("#hide").click(function(){
+                            $("#afbeelding img").hide("slow");
+                            $("#afbeelding2 img").show("slow");
+                        });
+                    });
+		        </script>
+
             </div> <!-- /content -->
 
             <!-- Footer -->
@@ -799,7 +828,107 @@
                     Home
                 </button>
 
+                <button id="btnLes7Oef61" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 7 Oefening 6.1
+                </button>
 
+                <button id="btnLes7Oef72" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 7 Oefening 7.2
+                </button>
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div>
+
+        <!-- Les 7 Oef 6.1 Page -->
+        <div id ="les7Oef61" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome20" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+                <button id="btnLes71" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 7
+                </button>
+
+                                <ul id="jMenu">
+                                    <li>
+                                        <a class="fNiv">Buienradar</a>
+                                        <ul>
+                                            <li>
+                                                <a>nl actueel</a>
+                                            </li>
+                                            <li>
+                                                <a>afgelopen uur</a>
+                                            </li>
+                                            <li>
+                                                <a>bliksem</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a class="fNiv">actueel weer</a>
+                                        <ul>
+                                            <li>
+                                                <a>kaarten</a>
+                                            </li>
+                                            <li>
+                                                <a>temperatuur</a>
+                                            </li>
+                                            <li>
+                                                <a>wind</a>
+                                            </li>
+                                            <li>
+                                                <a>zicht</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a class="fNiv">zon &amp; wolken</a>
+                                        <ul>
+                                            <li>
+                                                <a>Europa</a>
+                                            </li>
+                                            <li>
+                                                <a>Nederland</a>
+                                            </li>
+                                            <li>
+                                                <a>Duitsland</a>
+                                            </li>
+                                            <li>
+                                                <a>Frankrijk</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+<!--
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $("#jmenu").jMenu();
+                                });
+                            </script>
+-->
+                            <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+                            <link href="css/jquery-ui.structure.min.css" rel="stylesheet" type="text/css" />
+                            <link href="css/jquery-ui.theme.min.css" rel="stylesheet" type="text/css" />
+                            <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+                            <link href="jmenu/jMenu.css" rel="stylesheet" type="text/css" />
+                            <script src="jmenu/jMenu.jquery.js" type="text/javascript"></script>
 
             </div> <!-- /content -->
 
@@ -811,8 +940,8 @@
             </div> <!-- /footer -->
         </div>
 
-        <!-- Les 3 Page -->
-        <div id ="les8Page" data-role="page">
+        <!-- Les 7 Oef 7.2 Page -->
+        <div id ="les7Oef72" data-role="page">
             <!-- Header -->
             <div data-role="header">
 
@@ -821,11 +950,121 @@
 
             <!-- Content -->
             <div data-role="main" class="ui-content">
-                <button id="btnHome7" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                <button id="btnHome21" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
                     Home
                 </button>
 
+                <button id="btnLes72" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 7
+                </button>
 
+                <p>
+                    zoekterm:
+                    <input type="text" id="zoekterm" />
+                    <input type="button" value="zoek" id="zoek" /> <br/>
+                    <strong id="titel"> </strong>
+                </p>
+
+                <div id="fotos">
+
+                </div>
+
+                <p>
+                    <a id="bron" href=""> </a>
+                </p>
+
+                <script>
+			    function zoekFotos() {
+                    var zoekterm = $("#zoekterm").val();
+                    var flickrUrl = "http://api.flickr.com/services/feeds" + "/photos_public.gne?format=json&tags=";
+
+                    $.ajax(
+                        {
+                            dataType: 'json',
+                            type: "GET",
+                            url: flickrUrl + zoekterm + "&jsoncallback=?",
+                            success: verwerkJSON
+                    });
+                }
+
+                /*
+                jsonFlickrFeed({
+                    "title": "Recent Uploads tagged nederland",
+                    "link": "htttp://www.flickr.com/photos/tags/nederland/",
+                    "description": "",
+                    "modified": "2012-04-01T13:16:44Z",
+                    "generator": "http://www.flickr.com/",
+                    "items": [
+                        {
+                            "title": "Image_Circus_SoundOfGuns14",
+                            "link": "http://www.flickr.com/photos/eventshots/7034960583/",
+                            "media": {"m":"http://farm8.staticflickr.com/7052/7034960583_66411bc63c_m.jpg"},
+                            "date_taken": "2012-03-31T21:16:09-08:00",
+                            "description": " ...",
+                            "published": "2012-04-01T13:16:44Z",
+                            "author": "nobody@flickr.com (event.shots)",
+                            "author_id": "32881187@N00",
+                            "tags": "utrecht nederland nl"
+                        },
+                        {
+                            "title": "image_Circus_SoundOfGuns19",
+                            "link": "http://www.flickr.com/photos/eventshots/6888867010/",
+                            "media": {"m":"http://farm8.staticflickr.com/7229/68888867010_162cacd972_m.jpg"},
+                            "date_taken": "2012-03-31T21:21:54-08:00",
+                            "description": " ...",
+                            "published": "2012-04-01T13:16:51Z",
+                            "author": "nobody@flickr.com (event.shots)",
+                            "author_id": "32881187@NOO",
+                            "tags": "utrecht nederland nl"
+                        }
+                    ]
+                })
+                */
+
+                function verwerkJSON(response) {
+                    $("#fotos").html("");
+                    for (var i = 0; i < response.items.length; i++) {
+                        var foto = response.items[i];
+                        var html = "<div class='frame'><div class='image'><a href='" + foto.link + "'><img src='" + foto.media.m + "' alt='" + foto.title + "' /></a></div><h2>" + foto.title + "</h2></div>";
+                        $("#fotos").append(html);
+                    }
+                    $("#bron").attr("href", response.link).text("Bron: Flickr");
+                    $("#titel").text(response.title);
+                }
+		</script>
+
+                <style>
+                    #fotos div.frame (
+                        float: left;
+                        width: 300px;
+                        height: 240px
+                        background:#ccc;
+                        margin:10px;
+                        padding:0px;
+                    )
+
+                    #fotos .image (
+                        width:300px;
+                        height: 210px;
+                        overflow: hidden;
+                        background:#fff;
+                    )
+
+                    #fotos .image img
+                    (
+                        width:100%;
+                    )
+
+                    #fotos h2 (
+                        font-family: Arial, sans-serif;
+                        color: #333;
+                        font-size: .9em;
+                    )
+
+                    p (
+                        clear:both;
+                    )
+                </style>
 
             </div> <!-- /content -->
 
@@ -835,6 +1074,266 @@
                     Copyright &copy; Katjon Ng 2015 - 2016</a>
                 </p>
             </div> <!-- /footer -->
+        </div>
+
+        <!-- Les 8 Page -->
+        <div id ="les8Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="main" class="ui-content">
+                <button id="btnHome7" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+                <button id="btnLes8Oef" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Oefening SQL Database
+                </button>
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div>
+
+        <div data-role="page" id="les8home">
+            <div data-role="header" data-position="fixed" >
+                <h1>ToDo List</h1>
+            </div> <!-- /header -->
+
+            <div data-role="content">
+                <button id="btnHome22" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+                <label for="id">ID :</label>
+                <input type="number" id="id">
+
+                <label for="omschrijving">Omschrijving :</label>
+                <input type="text" id="omschrijving">
+
+                <label for="datum">Datum :</label>
+                <input type="date" id="datum">
+
+                <label for="afgewerkt">Afgewerkt :</label>
+                <input type="text" id="afgewerkt"> <br>
+
+                <button id="voegToe">
+                    Voeg Toe
+                </button>
+
+                <!-- <link rel="stylesheet" href="css/mi2Les10.min.css"> -->
+                <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
+                <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+
+                <script>
+                    "use strict";
+                    /*global $, console, openDatabase */
+                    var todo, teller, tText, db, id, omschrijving, datum, afgewerkt;
+
+                    function updateTables() {
+                        teller = 0;
+                        tText = "";
+                        for (teller = 0; teller < todo.length; teller += 1) {
+                            tText += "<tr><td>" + todo[teller].id + "<\/td><td>" + todo[teller].omschrijving  + "<\/td><td>" + todo[teller].datum + "<\/td><td>" + todo[teller].afgewerkt + "<\/td><\/tr>";
+                        }
+                        $("#les8highscore tbody").html(tText);
+                    }
+
+                    function updateTablesSQL() {
+                        db.transaction(function (tx) {
+                            tx.executeSql('SELECT * FROM todos order by id asc', [], function (tx, results) {
+                                var len = results.rows.length, i;
+                                tText = "";
+                                for (teller = 0; teller < len; teller += 1) {
+                                    tText += "<tr><td>" + results.rows.item(teller).id + "<\/td><td>" + results.rows.item(teller).omschrijving + "<\/td><td>" + results.rows.item(teller).datum + "<\/td><td>" + results.rows.item(teller).afgewerkt + "<\/td><\/tr>";
+                                }
+                                $("#les8highscoreDB tbody").html(tText);
+
+                            }, null);
+                        });
+                    }
+                    $(document).ready(function () {
+                        id = "1";
+                        omschrijving = "MI 2 portfolio afwerken.";
+                        datum = "22/05/2016";
+                        afgewerkt = "False";
+
+                        todo = [{
+                            "id" : id,
+                            "omschrijving" : omschrijving,
+                            "datum" : datum,
+                            "afgewerkt" : afgewerkt
+                        }];
+
+                        // schakel de transities uit
+                        $(document).bind('pageinit', function () {
+                            $.mobile.defaultPageTransition = 'none';
+                        });
+
+                        // open de databank
+                        db = openDatabase('mydb', '1.0', 'Test DB', 0.1 * 1024 * 1024);
+
+                        db.transaction(function (tx) {
+                            tx.executeSql('CREATE TABLE IF NOT EXISTS todos (id, omschrijving, datum, afgewerkt)');
+                            tx.executeSql('select count(*) as aantal from todos where id like ? and omschrijving like ? and datum like ? and afgewerkt like ?', [id, omschrijving, datum, afgewerkt], function (tx, results) {
+                                // kijk na of het resultaat ok is.
+                                console.log("select werkt");
+                                if (results.rows.item(0).id === 0) {
+                                    // er was nog geen combinatie met de naam & score in de db, dus voeg die nu toe :
+                                    tx.executeSql('INSERT INTO todos (id,omschrijving, datum, afgewerkt) VALUES (?, ?, ?, ?)', [id, omschrijving, datum, afgewerkt], function (tx, results) {
+                                        console.log("ok!");
+                                    }, function (tx, error) {
+                                        console.log("NOK!");
+                                    });
+                                }
+
+                            }, function (tx, error) {
+                                console.log("NOK!");
+                            });
+                        });
+
+                        updateTables();
+                        updateTablesSQL();
+
+                        $("#voegToe").click(function () {
+                            id = $("#id").val();
+                            omschrijving = $("#omschrijving").val();
+                            datum = $("#datum").val();
+                            afgewerkt = $("#afgewerkt").val();
+
+                            todo.push({
+                                "id" : id,
+                                "omschrijving" : omschrijving,
+                                "datum" : datum,
+                                "afgewerkt" : afgewerkt
+                            });
+
+                            db.transaction(function (tx) {
+                                tx.executeSql('INSERT INTO todos (id,omschrijving, datum, afgewerkt) VALUES (?, ?, ?, ?)', [id, omschrijving, datum, afgewerkt]);
+                            });
+                            updateTables();
+                            updateTablesSQL();
+
+                        });
+                    });
+		        </script>
+            </div> <!-- /content -->
+
+            <div data-role="footer" data-id="footMenu" data-position="fixed" >
+                <div data-role="navbar" data-grid="b">
+                    <ul>
+                        <li>
+                            <a href="#les8home" class="ui-btn-active ui-state-persist" data-icon="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#les8highscore"  data-icon="star" data-iconpos="notext">Highscore</a>
+                        </li>
+                        <li>
+                            <a href="#les8highscoreDB" data-icon="edit" data-iconpos="notext">Highscore DB</a>
+                        </li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+
+        </div>
+
+        <div data-role="page" id="les8highscore">
+            <div data-role="header" data-position="fixed" >
+                <h1>ToDo</h1>
+            </div>
+
+            <!-- Content -->
+            <div data-role="content">
+                <table id="todoTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Omschrijving</th>
+                            <th>Datum</th>
+                            <th>Afgewerkt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer" data-id="footMenu" data-position="fixed">
+                <div data-role="navbar" data-grid="b">
+                    <ul>
+                        <li>
+                            <a href="#les8home"  data-icon="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#les8highscore" class="ui-btn-active ui-state-persist" data-icon="star" data-iconpos="notext">Highscore</a>
+                        </li>
+                        <li>
+                            <a href="#les8highscoreDB" data-icon="edit" data-iconpos="notext">Highscore DB</a>
+                        </li>
+
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+
+        </div>
+
+        <div data-role="page" id="les8highscoreDB">
+            <div data-role="header" data-position="fixed" >
+                <h1>ToDo uit de DB</h1>
+            </div>
+            <div data-role="content">
+                <table id="todoTableDB">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Omschrijving</th>
+                            <th>Datum</th>
+                            <th>Afgewerkt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer" data-id="footMenu" data-position="fixed">
+                <div data-role="navbar" data-grid="b">
+                    <ul>
+                        <li>
+                            <a href="#les8home"  data-icon="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#les8highscore" data-icon="star" data-iconpos="notext">Highscore</a>
+                        </li>
+                        <li>
+                            <a href="#les8highscoreDB" class="ui-btn-active ui-state-persist" data-icon="edit" data-iconpos="notext">Highscore DB</a>
+                        </li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
+
         </div>
 
         <!-- Les 9 Page -->
@@ -850,9 +1349,6 @@
                 <button id="btnHome8" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
                     Home
                 </button>
-
-
-
             </div> <!-- /content -->
 
             <!-- Footer -->
