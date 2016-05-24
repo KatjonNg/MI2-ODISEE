@@ -27,7 +27,7 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" >
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" > -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval'; "> -->
     <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="Game/css/Trollslayer.css" />
 
     <!-- JS -->
-    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
@@ -1129,10 +1129,12 @@
                     Voeg Toe
                 </button>
 
+                <p> OPMERKING: Deze oefening werkt alleen op browser en niet op mobiel. Ik heb de script bij index.html als commentaar geschreven want anders werkt mijn applicatie niet op mobiel. Als je deze oefening wilt testen dan moet je commentaar weg halen bij lijn 1134 tot 1229. </p>
+
                 <!-- <link rel="stylesheet" href="css/mi2Les10.min.css"> -->
                 <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
                 <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
-
+<!--
                 <script>
                     "use strict";
                     /*global $, console, openDatabase */
@@ -1224,7 +1226,7 @@
 
                         });
                     });
-		        </script>
+		        </script> -->
             </div> <!-- /content -->
 
             <div data-role="footer" data-id="footMenu" data-position="fixed" >
@@ -1349,6 +1351,10 @@
                 <button id="btnHome8" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
                     Home
                 </button>
+
+                <button id="btnLes9Oef810" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 9 Oefening 8.10
+                </button>
             </div> <!-- /content -->
 
             <!-- Footer -->
@@ -1359,7 +1365,93 @@
             </div> <!-- /footer -->
         </div>
 
-        <!-- Les 3 Page -->
+        <!-- Les 9 Page -->
+        <div id ="les9Oef810Page" data-role="page">
+            <!-- Header -->
+            <div data-role="header">
+                <h1> Stel weeralert in </h1>
+                <h2>Katjon Ng - r0371936</h2>
+            </div> <!-- /header-->
+
+            <!-- Content -->
+            <div data-role="content">
+                <button id="btnHome23" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Home
+                </button>
+
+                <button id="btnLes91" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
+                    Les 9
+                </button>
+
+                <form action="#" method="get">
+                    <div data-role="ui-field-contain">
+                        <label for="email"> E-mail adres:</label>
+                        <input type="text" name="email" id="email" value="" />
+                    </div>
+
+                    <div data-role="Controlgroup">
+                        <legend>
+                            Voor welk weer?
+                        </legend>
+                        <input type="checkbox" name="regen" id="regen" class="custom" />
+                        <label for="regen"> Regen </label>
+                        <input type="checkbox" name="sneeuw" id="sneeuw" class="custom" />
+                        <label for="sneeuw"> Sneeuw </label>
+                        <input type="checkbox" name="zon" id="zon" class="custom" />
+                        <label for="zon"> Zon </label>
+                    </div>
+                    <!-- data-role="fieldcontain" = deprecated -->
+                    <div class="ui-field-contain">
+                        <label for="minuten"> Aantal minuten vooraf: </label>
+                        <input type="range" name="minuten" id="minuten" value="1" min="1" max="60" />
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label for="actief"> Actief: </label>
+                        <select name="actief" id="actief" data-role="slider">
+                            <option value="off"> Nee</option>
+                            <option value="on"> Ja</option>
+                        </select>
+                    </div>
+
+                    <div class="ui-field-contain">
+                        <label for="adres"> Voor welk adres: </label>
+                        <select name="adres" id="adres">
+                            <option value="thuis"> Thuis </option>
+                            <option value="werk"> Werk </option>
+                            <option value="vakantie"> Vakantie </option>
+                        </select>
+                    </div>
+
+                    <div class="ui-body ui-body-b">
+                        <fieldset class="ui-grid-a">
+                            <div class="ui-block-a">
+                                <button type="submit" data-theme="d">
+                                    Annuleer
+                                </button>
+                            </div>
+
+                            <div class="ui-book-b">
+                                <button type="submit" data-theme="a">
+                                    Bewaar
+                                </button>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                </form>
+
+            </div> <!-- /content -->
+
+            <!-- Footer -->
+            <div data-role="footer">
+                <p>
+                    Copyright &copy; Katjon Ng 2015 - 2016</a>
+                </p>
+            </div> <!-- /footer -->
+        </div>
+
+        <!-- Les 10 Page -->
         <div id ="les10Page" data-role="page">
             <!-- Header -->
             <div data-role="header">
@@ -1372,8 +1464,6 @@
                 <button id="btnHome9" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b">
                     Home
                 </button>
-
-
 
             </div> <!-- /content -->
 
@@ -1400,12 +1490,11 @@
                     Home
                 </button>
 
+                <button id="btnStartGame" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b"> Start </button>
+
                 <div id="Map"> </div>
 
                 <div id="Info"> </div>
-
-
-
 
             </div> <!-- /content -->
 

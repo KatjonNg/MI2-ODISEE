@@ -38,6 +38,7 @@ $(document).ready(function() {
     var playerHp = 50;
     var playerDmg = 10;
     var playerBankai = false;
+    var playerSpawned = false;
 
     // Weapon
     var weapon;
@@ -55,6 +56,7 @@ $(document).ready(function() {
     var trollRandomMoveDirection;
     var trollHp = 10;
     var trollDmg = 10;
+    var trollSpawned = false;
     //var trollPosition;
     // Timer
     var spawnTrollSpeed = 3000;       // Time in milliseconds
@@ -71,9 +73,9 @@ $(document).ready(function() {
      */
 
     // Ready to rule? Let's start the game!
-    createbtnStart();
+    //createbtnStart();
     $( "#btnStartGame" ).on( "click",  startGame );
-    //    startGame();
+        startGame();
 
     /*
     **LOAD DEFAULT MAP AND CHARACTER**
@@ -91,9 +93,35 @@ $(document).ready(function() {
         //showLog();
         showInfo();
         //console.log(mapPosition);
-        console.log(weaponPosition);
+        //console.log(weaponPosition);
 
         $("#btnStartGame").hide();
+    }
+
+    // end game
+    function endGame(){
+        playerSpawned = false;
+        trollSpawned = false;
+        clearInterval(trollInterval);
+        clearInterval(trollAutoMoveSpeed);
+        playerHp = 50;
+        playerDmg = 10;
+        playerMsSpeed = 20;
+
+        $('#Player').each(function() {
+			$(this).remove();
+		});
+
+        $('#Weapon').each(function() {
+			$(this).remove();
+		});
+
+        $('.Troll').each(function() {
+        			$(this).removeClass(".Troll");
+        			$(this).remove();
+        });
+        console.log("Game Over");
+        $("#btnStartGame").show();
     }
 
     /*
@@ -131,10 +159,10 @@ $(document).ready(function() {
     /*
     **BUTTONS**
     */
-
+/*
     // Start button
     function createbtnStart() {
-        var btnStartGame = '<button id=btnStartGame type=button class=ui-btn ui-corner-all ui-shadow ui-btn-b> Start </button>';
+        var btnStartGame = '<button id="btnStartGame" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b"> Start </button>';
         $("#Map").append(btnStartGame);
 
         //playerX = $("#Player").width();
@@ -143,6 +171,7 @@ $(document).ready(function() {
 
        // console.log("Player has been created succesfully.");
     }
+    */
 
     /*
     **CREATION OF CHARACTERS**
@@ -157,6 +186,7 @@ $(document).ready(function() {
         playerY = $("#Player").height();
         playerPosition = $("#Player").position()
 
+        playerSpawned = true;
         console.log("Player has been created succesfully.");
     }
 
@@ -216,10 +246,11 @@ $(document).ready(function() {
         var newTrollPosition = $(".Troll").position();
         //trollPosition = newTrollPosition;
 
-        $("body").append($("<div>").addClass("Troll").css({
+        $("#Map").append($("<div>").addClass("Troll").css({
             "left" : randomX,
             "top" : randomY
         }));
+        trollSpawned = true;
         console.log("Troll has been spwaned succesfully.");
      }
 
@@ -253,19 +284,40 @@ $(document).ready(function() {
     function autoMoveTrolls(){
         var trollPosition = $(".Troll").position();
         //trollPosition = newTrollPosition;
+        checkCollisionTroll();
 
         switch(trollRandomMoveDirection){
             case 1: // Move left.
-                $(".Troll").css('left', trollPosition.left - trollMsSpeed + 'px');
+                if (trollPosition.left <= mapPosition.left) {
+                    console.log("Troll hit the left top wall and can not move any further");
+                }
+                else{
+                    $(".Troll").css('left', trollPosition.left - trollMsSpeed + 'px');
+                }
                 break;
             case 2: // Move right.
-                $(".Troll").css('left', trollPosition.left + trollMsSpeed + 'px');
+                if (trollPosition.left >= mapPosition.left + mapX - playerX) {
+                    console.log("Troll hit the bottom wall and can not move any further");
+                }
+                else{
+                    $(".Troll").css('left', trollPosition.left + trollMsSpeed + 'px');
+                }
                 break;
             case 3: // Move up.
-                $(".Troll").css('top', trollPosition.top - trollMsSpeed + 'px');
+                if (trollPosition.top <= mapPosition.top) {
+                console.log("Troll hit the top wall and can not move any further");
+             }
+                else{
+                 $(".Troll").css('top', trollPosition.top - trollMsSpeed + 'px');
+                }
                 break;
             case 4: // Move down.
-                $(".Troll").css('top', trollPosition.top + trollMsSpeed + 'px');
+                if (trollPosition.top >= mapPosition.top + mapY - playerY) {
+                    console.log("Troll hit the bottom wall and can not move any further");
+                }
+                else{
+                    $(".Troll").css('top', trollPosition.top + trollMsSpeed + 'px');
+                }
                 break;
         }
     }
@@ -277,126 +329,129 @@ $(document).ready(function() {
 
     // Controls using keyboard
     function keyboardKeys(event) {
+        if (playerSpawned == true){
 
-        checkCollisionWeapon();
+            switch(event.which) {
+                case 32: // Space
 
-        switch(event.which) {
-            case 32: // Space
-
-                break;
-            case 65: // a
-            case 81: // q
-            case 37: // Left arrow key
-                // Weapon not yet grabbed.
-                if (collisionWeapon == false){
-                    // Player hit top left wall.
-                    if (playerPosition.left <= mapPosition.left) {
-                        console.log("Player hit the left top wall and can not move any further");
-                    }
-                    else{
-                        // Player move left.
-                        showPlayerLeft();
-                        movePlayerLeft();
-                    }
-                }
-                // Weapon grabbed.
-                else{
-                    // Player hit left top wall.
-                    if (playerPosition.left <= mapPosition.left) {
-                        console.log("Player hit the left top wall and can not move any further");
-                    }
-                        if (playerBankai == false){
-                            // Player move left.
-                            showPlayerWithWeaponLeft();
-                            movePlayerLeft();
+                    break;
+                case 65: // a
+                case 81: // q
+                case 37: // Left arrow key
+                    // Weapon not yet grabbed.
+                    if (collisionWeapon == false){
+                        // Player hit top left wall.
+                        if (playerPosition.left <= mapPosition.left) {
+                            console.log("Player hit the left top wall and can not move any further");
                         }
                         else{
                             // Player move left.
-                            showPlayerWithWeaponLeft();
+                            showPlayerLeft();
                             movePlayerLeft();
                         }
-                }
-                break;
-            case 87: // w
-            case 90: // z
-            case 38: // Up arrow key
-                // Weapon not yet grabbed.
-                if (collisionWeapon == false){
-                    if (playerPosition.top <= mapPosition.top) {
-                        console.log("Player hit the top wall and can not move any further");
                     }
-                    else {
-                        movePlayerUp();
-                    }
-                }
-                // Weapon grabbed.
-                else{
-                    // Player hit left top wall.
-                    if (playerPosition.top <= mapPosition.top) {
-                        console.log("Player hit the left top wall and can not move any further");
-                    }
+                    // Weapon grabbed.
                     else{
-                    // Player move top.
-                        movePlayerUp();
+                        // Player hit left top wall.
+                        if (playerPosition.left <= mapPosition.left) {
+                            console.log("Player hit the left top wall and can not move any further");
+                        }
+                        else{
+                                // Player move left.
+                                movePlayerLeft();
+                        }
                     }
-                }
-                break;
-            case 68: // d
-            case 39: // Right arrow key
-                // Weapon not yet grabbed.
-                if (collisionWeapon == false){
-                    if (playerPosition.left >= mapPosition.left + mapX - playerX) {
-                        console.log("Player hit the bottom wall and can not move any further");
+                    break;
+                case 87: // w
+                case 90: // z
+                case 38: // Up arrow key
+                    // Weapon not yet grabbed.
+                    if (collisionWeapon == false){
+                        if (playerPosition.top <= mapPosition.top) {
+                            console.log("Player hit the top wall and can not move any further");
+                        }
+                        else {
+                            movePlayerUp();
+                        }
                     }
-                    else {
-                        showPlayerRight();
-                        movePlayerRight();
-                    }
-                }
-                // Weapon grabbed.
-                else{
-                    // Player hit left top wall.
-                    if (playerPosition.left >= mapPosition.left + mapX - playerX) {
-                        console.log("Player hit the left top wall and can not move any further");
-                    }
+                    // Weapon grabbed.
                     else{
-                    // Player move left.
-                        showPlayerWithWeaponRight();
-                        movePlayerRight();
+                        // Player hit left top wall.
+                        if (playerPosition.top <= mapPosition.top) {
+                            console.log("Player hit the top wall and can not move any further");
+                        }
+                        else{
+                        // Player move top.
+                            movePlayerUp();
+                        }
                     }
-                }
-                break;
-            case 83: // s
-            case 40: // Down arrow key
-                // Weapon not yet grabbed.
-                if (collisionWeapon == false){
-                    if (playerPosition.top >= mapPosition.top + mapY - playerY) {
-                        console.log("Player hit the bot wall and can not move any further");
+                    break;
+                case 68: // d
+                case 39: // Right arrow key
+                    // Weapon not yet grabbed.
+                    if (collisionWeapon == false){
+                        if (playerPosition.left >= mapPosition.left + mapX - playerX) {
+                            console.log("Player hit the lef top wall and can not move any further");
+                        }
+                        else {
+                            showPlayerRight();
+                            movePlayerRight();
+                        }
                     }
-                    else {
-                        movePlayerDown();
+                    // Weapon grabbed.
+                    else{
+                        // Player hit left top wall.
+                        if (playerPosition.left >= mapPosition.left + mapX - playerX) {
+                            console.log("Player hit the left top wall and can not move any further");
+                        }
+                        else{
+                        // Player move left.
+                            showPlayerWithWeaponRight();
+                            movePlayerRight();
+                        }
                     }
+                    break;
+                case 83: // s
+                case 40: // Down arrow key
+                    // Weapon not yet grabbed.
+                    if (collisionWeapon == false){
+                        if (playerPosition.top >= mapPosition.top + mapY - playerY) {
+                            console.log("Player hit the bot wall and can not move any further");
+                        }
+                        else {
+                            movePlayerDown();
+                        }
 
-                }
-                // Weapon grabbed.
-                else{
-                    // Player hit left top wall.
-                    if (playerPosition.top >= mapPosition.top + mapY - playerY) {
-                        console.log("Player hit the left top wall and can not move any further");
                     }
+                    // Weapon grabbed.
                     else{
-                    // Player move left.
-                        movePlayerDown();
+                        // Player hit left top wall.
+                        if (playerPosition.top >= mapPosition.top + mapY - playerY) {
+                            console.log("Player hit the bot wall and can not move any further");
+                        }
+                        else{
+                        // Player move left.
+                            movePlayerDown();
+                        }
                     }
-                }
-             break;
-            case 82: //r
-                if (score == 500 || playerBankai == false){
-                    playerBankai == true
-                }
-            break;
+                 break;
+                case 82: //r
+                    if (score == 500 || playerBankai == false){
+                        playerBankai == true
+                    }
+                break;
+            }
+             checkCollisionWeapon();
         }
     }
+
+    // Control for mobile
+/*
+    $(document).bind('touchmove', function (e){
+
+
+    });
+*/
 
     /*
     **COLLISION DETECTION**
@@ -422,8 +477,38 @@ $(document).ready(function() {
 
             if (r1 > x2 && y1 < b2){
                 document.getElementById("Weapon").remove();
-                console.log("Player has grabbed the weapon succesfully.");
                 collisionWeapon = true;
+                console.log("Player has grabbed the weapon succesfully.");
+            }
+        }
+    }
+
+    // Check if player grabbed the weapon
+    function checkCollisionTroll(){
+        if (trollSpawned == true){
+            playerPosition = $("#Player").position();
+            weaponPosition = $(".Troll").position();
+
+            var x1 = $("#Player").offset().left;
+            var y1 = $("#Player").offset().top;
+            var w1 = $("#Player").outerWidth(true);
+            var r1 = x1 + w1;
+
+            if (collisionWeapon == false){
+                // Only use this variable if weapon exist.
+                var x2 = $(".Troll").offset().left;
+                var y2 = $(".Troll").offset().top;
+                var h2 = $(".Troll").outerHeight(true);
+                var b2 = y2 + h2;
+
+                if (r1 > x2 && y1 < b2){
+                    console.log("Player hit troll.");
+                    playerHp = playerHp - 10;
+                    console.log(playerHp);
+                    if (playerHp == 0){
+                        endGame();
+                    }
+                }
             }
         }
     }

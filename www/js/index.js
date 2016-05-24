@@ -167,6 +167,12 @@ $(document).ready(function() {
         $.mobile.navigate( "#les9Page", { transition: 'slide'} );
     }// End function changeRegisterPage()
 
+    // Navigate to les 9 Oef 8.10 Page
+    function changeLes9Oef810Page() {
+        $.mobile.navigate( "#les9Oef810Page", { transition: 'slide'} );
+    }// End function changeLes9Oef810Page()
+
+
     // Navigate to les 10 Page
     function changeLes10Page() {
         $.mobile.navigate( "#les10Page", { transition: 'slide'} );
@@ -201,6 +207,7 @@ $(document).ready(function() {
 	$( "#btnHome20" ).on( "click", changeHomePage );
 	$( "#btnHome21" ).on( "click", changeHomePage );
 	$( "#btnHome22" ).on( "click", changeHomePage );
+	$( "#btnHome23" ).on( "click", changeHomePage );
 	$( "#btnLes1" ).on( "click", changeLes1Page );
 	$( "#btnLes2" ).on( "click", changeLes2Page );
 	$( "#btnLes3" ).on( "click", changeLes3Page );
@@ -233,6 +240,8 @@ $(document).ready(function() {
 	$( "#btnLes8" ).on( "click", changeLes8Page );
 	$( "#btnLes8Oef" ).on( "click", changeLes8OefPage );
 	$( "#btnLes9" ).on( "click", changeLes9Page );
+	$( "#btnLes91" ).on( "click", changeLes9Page );
+	$( "#btnLes9Oef810" ).on( "click", changeLes9Oef810Page );
 	$( "#btnLes10" ).on( "click", changeLes10Page );
 	$( "#btnGame" ).on( "click", changeGamePage );
 
