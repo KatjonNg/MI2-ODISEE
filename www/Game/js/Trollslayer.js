@@ -75,7 +75,11 @@ $(document).ready(function() {
     // Ready to rule? Let's start the game!
     //createbtnStart();
     $( "#btnStartGame" ).on( "click",  startGame );
-        startGame();
+        //startGame();
+
+        //$( "#Map" ).on( "swiperight",  movePlayerRight );
+        //$( "#Map" ).on( "swiperight",  movePlayerRight );
+
 
     /*
     **LOAD DEFAULT MAP AND CHARACTER**
@@ -84,12 +88,14 @@ $(document).ready(function() {
     // Start game with default map and character
     function startGame(){
         createPlayer();
+        swipe();
         spawnWeapon();
         trollInterval = window.setInterval(spawnTroll, spawnTrollSpeed);                   // Spawn troll every 3 seconds
         trollAutoMoveSpeed = window.setInterval(autoMoveTrolls, 500);
 
         // Allow keyboard controls
         $(document).keydown(keyboardKeys);
+        //$(document).touchmove(swipe);
         //showLog();
         showInfo();
         //console.log(mapPosition);
@@ -446,12 +452,104 @@ $(document).ready(function() {
     }
 
     // Control for mobile
-/*
-    $(document).bind('touchmove', function (e){
 
+    function swipe(event){
+        if (playerSpawned == true){
+        // Left
+         // Weapon not yet grabbed.
+            if (collisionWeapon == false){
+                // Player hit top left wall.
+                if (playerPosition.left <= mapPosition.left) {
+                    console.log("Player hit the left top wall and can not move any further");
+                }
+                else{
+                    // Player move left.
+                    showPlayerLeft();
+                    $( "#Map" ).on( "swipeleft",  movePlayerLeft );
+                }
+            }
+            // Weapon grabbed.
+            else{
+                // Player hit left top wall.
+                if (playerPosition.left <= mapPosition.left) {
+                    console.log("Player hit the left top wall and can not move any further");
+                }
+                else{
+                        // Player move left.
+                        $( "#Map" ).on( "swipeleft",  movePlayerLeft );
+                }
+            }
 
-    });
-*/
+        // Right
+        // Weapon not yet grabbed.
+            if (collisionWeapon == false){
+                if (playerPosition.left >= mapPosition.left + mapX - playerX) {
+                    console.log("Player hit the lef top wall and can not move any further");
+                }
+                else {
+                    showPlayerRight();
+                    $( "#Map" ).on( "swiperight", movePlayerRight );
+                }
+            }
+            // Weapon grabbed.
+            else{
+                // Player hit left top wall.
+                if (playerPosition.left >= mapPosition.left + mapX - playerX) {
+                    console.log("Player hit the left top wall and can not move any further");
+                }
+                else{
+                // Player move left.
+                    showPlayerWithWeaponRight();
+                    $( "#Map" ).on( "swiperight", movePlayerRight );
+                }
+            }
+
+            // Top
+            // Weapon not yet grabbed.
+            if (collisionWeapon == false){
+                if (playerPosition.top <= mapPosition.top) {
+                    console.log("Player hit the top wall and can not move any further");
+                }
+                else {
+                   $( "#Map" ).on( "swipetop", movePlayerUp );
+                }
+            }
+            // Weapon grabbed.
+            else{
+                // Player hit left top wall.
+                if (playerPosition.top <= mapPosition.top) {
+                    console.log("Player hit the top wall and can not move any further");
+                }
+                else{
+                // Player move top.
+                    $( "#Map" ).on( "swipetop", movePlayerUp );
+                }
+            }
+            // Bot
+            // Weapon not yet grabbed.
+            if (collisionWeapon == false){
+                if (playerPosition.top >= mapPosition.top + mapY - playerY) {
+                    console.log("Player hit the bot wall and can not move any further");
+                }
+                else {
+                    $( "#Map" ).on( "swipebot",movePlayerDown );
+                }
+
+            }
+            // Weapon grabbed.
+            else{
+                // Player hit left top wall.
+                if (playerPosition.top >= mapPosition.top + mapY - playerY) {
+                    console.log("Player hit the bot wall and can not move any further");
+                }
+                else{
+                // Player move left.
+                    $( "#Map" ).on( "swipebot",movePlayerDown );
+                }
+            }
+        }
+    }
+
 
     /*
     **COLLISION DETECTION**
